@@ -1,0 +1,13 @@
+The app should do:
+
+1 let the user set a timer (25 / 35 / 45 )
+2 set break (5 => 25, 10 =>, 45 => ) and bip when the time is up. 
+3 have a description of what is pomodoro technique
+4 Give some suggestion of what a person can do in each of the period defined above
+
+Steps
+
+1 setup the HTML file
+2 style it with CSS
+3 create the app with Javascript
+

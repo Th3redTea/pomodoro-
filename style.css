@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: rgb(207, 18, 81);
+    color: #ffffff;
+    font-family: 'Fjalla One', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    min-height: 70px;
+
+    
+}
+
+header h1{
+    margin-top: 15px ;
+    margin-left: 50px
+}
+
+header button{
+    margin: 10px 50px 10px 30px;;
+    background-color: white;
+    color: rgba(207, 18, 81, 0.623);
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.timer{
+    background: linear-gradient(120deg, teal, rgba(207, 18, 81, 0.623));
+    min-height: 700px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.timer p{
+    font-family: monospace;
+    color: white;
+    font-size: 70px;
+}
+
+.timer button{
+    font-size: 50px;
+}
