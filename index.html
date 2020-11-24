@@ -25,16 +25,19 @@
         <h1 id="main-title">Pomodoro</h1>
         <button id="reselect">Reselect Timer</button>
     </header>
-    <section>
+    <section class="main">
         <!-- the main timer  -->
         <div class="timer">
-            <p id="timer-minuts">25:</p>
-            <p id="timer-seconds"></p>
-            <div class="stop-reset">
-                <button id="stop">Stop</button>
-                <button id="reset">Reset</button>
-            </div>
-        </div>
+            <p id="timer-minuts">25</p>
+            <p>:</p>
+            <p id="timer-seconds">00</p>
+        </div> 
+        <div class="buttons">
+            <button id="stop" onclick="sec();">Stop</button>
+            <button id="reset" onclick="reset();">Reset</button>
+        </div>   
+
+
     </section>
 
     <!-- About the Technique and who uses it -->

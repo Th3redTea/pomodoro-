@@ -32,14 +32,13 @@ header button{
     cursor: pointer;
 }
 
-.timer{
+.main{
     background: linear-gradient(120deg, teal, rgba(207, 18, 81, 0.623));
     min-height: 500px;
 
-
 }
 
-.timer p{
+.timer{
     font-family: monospace;
     color: white;
     font-size: 90px;
@@ -50,7 +49,7 @@ header button{
     top: 150px;
 }
 
-.stop-reset{
+.buttons{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +57,7 @@ header button{
     top: 200px;
 }
 
-.timer button{
+.main button{
     font-size: 40px;
     background-color: white;
     color: rgba(207, 18, 81, 0.623);
@@ -69,6 +68,7 @@ header button{
     margin: 10px ;
     font-family: 'Carme', sans-serif;  
     font-weight: bold;
+
 }
 
 .about{
