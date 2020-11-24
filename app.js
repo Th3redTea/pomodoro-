@@ -1,3 +1,18 @@
+//get the styling of the p right
+//
+
+
+
+let minTimer = document.getElementById('timer-minuts')
+let secTimer = document.getElementById('timer-seconds')
+
+//buttons
+let reseter = document.getElementById('reset')
+let stop = document.getElementById('stop')
+
+
+reseter.addEventListener('click', sec());
+//Timer
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }  
@@ -8,29 +23,26 @@ async function sec(){
     while (seconds <= 60){
         seconds--;
         if (seconds == -1){
-            var minuts = minuts-1
-            console.log(minuts)
+            var minuts = minuts - 1;
+            if (minuts = 0){
+                minTimer.innerText = `0${minuts}`;
+                alert('Time is up! Go for a rest!')
+            } else if (minuts < 10){
+                minTimer.innerText = `0${minuts}`;
+            } else{
+                minTimer.innerText = `${minuts}:`;
+            }
             var seconds = 59;
         }; 
-        console.log(seconds)
+        if (seconds < 10){
+            secTimer.innerText = `0${seconds}`;
+        } else{
+            secTimer.innerText = seconds;
+            
+        };
         await sleep(1000);
     }
     return seconds
 };
 
 
-// function min(){
-//     var minuts = 25;     
-//      while (minuts <= 25){
-//          minuts--;
-//          if (minuts == -1){
-//              console.log("Time is up!")
-//              break;
-//          }; 
-//          console.log(minuts)
-//          sec();
-//      }
-//      return minuts
-// };
-
-sec()
