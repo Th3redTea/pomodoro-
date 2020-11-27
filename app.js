@@ -1,7 +1,7 @@
 //get the styling of the p 
 var minTimer = document.getElementById('timer-minuts')
 var secTimer = document.getElementById('timer-seconds')
-minTimer.textContent = 25;
+minTimer.textContent = 1;
 secTimer.textContent = "00";
 
 //buttons
@@ -15,20 +15,21 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms)); //this function is to wait 1 second
 };
 
-var minuts = 25;
+var minuts = 1;
 
 function handleMinuts() {
-    minuts -= minuts;
-    if (minuts == 0 && seconds == 0){
+    minuts--;
+    if (minuts == -1 && seconds == "00"){
             alert("Time is up")
     } else if (minuts < 10){
             minTimer.textContent = `0${minuts}`;
+            
     } else{
             minTimer.textContent = `${minuts}`;
     };
     
 
-    return minuts -1;
+    return minuts;
 };
 
 
@@ -42,21 +43,25 @@ async function handleSeconds(){
             
         } else{
             secTimer.textContent = seconds;
-            console.log(seconds);
-            
+                        
         };
 
         if (seconds == 00){
-            handleMinuts();
+            await handleMinuts();
             var seconds = 60;               
         };
 
         await sleep(1000); //wait for the promise sleep() to settle, or to wait for 1 sec to finish.
-         
+        if (minTimer.textContent === "00" && secTimer.textContent === "00"){
+            alert("Time is up")
+            break;
+        } 
     }
     return seconds
     
-}; onclick="resetTimer();"
+};
+
+
 
 stop.addEventListener('click', (e) => {
     e.preventDefault();
