@@ -1,68 +1,75 @@
 //get the styling of the p 
-let minTimer = document.getElementById('timer-minuts')
-let secTimer = document.getElementById('timer-seconds')
+var minTimer = document.getElementById('timer-minuts')
+var secTimer = document.getElementById('timer-seconds')
+minTimer.textContent = 25;
+secTimer.textContent = "00";
 
 //buttons
-let reseter = document.getElementById('reset')
-let stop = document.getElementById('stop')
+var reseter = document.getElementById('reset');
+var stop = document.getElementById('stop');
 
 
-//Timer start here
-
+// In JavaScript, a promise is an object that returns a value which you hope to 
+// receive in the future, but not now.
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms)); //this function is to wait 1 second
+};
 
 var minuts = 25;
-var seconds = 60;
 
-//this function is to wait 1 second
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+function handleMinuts() {
+    minuts -= minuts;
+    if (minuts == 0 && seconds == 0){
+            alert("Time is up")
+    } else if (minuts < 10){
+            minTimer.textContent = `0${minuts}`;
+    } else{
+            minTimer.textContent = `${minuts}`;
+    };
+    
+
+    return minuts -1;
 };
 
 
-
-async function sec(){
+async function handleSeconds(){
     
+    var seconds = 60;
     while (seconds <= 60){
-        seconds--;
-         
+        seconds--; 
         if (seconds < 10){
-            secTimer.innerText = `0${seconds}`;
+            secTimer.textContent = `0${seconds}`;
+            
         } else{
-            secTimer.innerText = seconds;
+            secTimer.textContent = seconds;
+            console.log(seconds);
             
         };
 
-        if (seconds == -1){
-            min();
-            var seconds = 59;               
-         };
-        await sleep(1000);
+        if (seconds == 00){
+            handleMinuts();
+            var seconds = 60;               
+        };
+
+        await sleep(1000); //wait for the promise sleep() to settle, or to wait for 1 sec to finish.
+         
     }
     return seconds
     
-};
+}; onclick="resetTimer();"
 
-function min() {
-    var minuts = minuts - 1;
-        if (minuts = 0){
-            minTimer.innerText = `0${minuts}`;
-                alert('Time is up! Go for a rest!')
-        } else if (minuts < 10){
-                minTimer.innerText = `0${minuts}`;
-        } else{
-                minTimer.innerText = `${minuts}:`;
-        };
-};
+stop.addEventListener('click', (e) => {
+    e.preventDefault();
+    handleSeconds();
+});
 
 
-
-//the reset function 
-
-function reset(){
-    minTimer.innerText = 25;
-    secTimer.innerText = "00";
-
-}
+reseter.addEventListener('click', (e) =>{
+    e.preventDefault;
+    minTimer.textContent = 25;
+    secTimer.textContent = "00";
+    
+});
 
 
 
