@@ -10,16 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Carme&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- <div class="select">
+    <div class="select">
         <h1>Choose Time</h1>
-        <button id="btn-25">25'</button>
-        <button id="btn-35">35'</button>
-        <button id="btn-45">45'</button>
+        <div id="timer-btns">
+            <button id="btn-25">25'</button>
+            <button id="btn-35">35'</button>
+            <button id="btn-45">45'</button>
+        </div>
         <h2>Choose Break Time</h2>
-        <button id="btn-5">5'</button>
-        <button id="btn-10">10'</button>
-        <button id="btn-15">15'</button>
-    </div> -->
+        <div class="break-btns">
+            <button id="btn-5">5'</button>
+            <button id="btn-7">7'</button>
+            <button id="btn-15">15'</button>
+        </div>
+    </div> 
     
     <header>
         <h1 id="main-title">Pomodoro</h1>
@@ -74,7 +78,8 @@
          </article>
         </div>
     </section>
-    <script src="app.js"></script>
     <footer></footer>
+    <script src="app.js"></script>
+    <script src="break.js"></script>
 </body>
 </html>
